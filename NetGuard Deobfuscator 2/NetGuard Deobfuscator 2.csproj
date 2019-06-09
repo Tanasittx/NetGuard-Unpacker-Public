@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C81EF7F-F092-42DA-B61E-17FEA8B3E01B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>NetGuard_Deobfuscator_2</RootNamespace>
+    <AssemblyName>NetGuard Deobfuscator 2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AsmResolver">
+      <HintPath>..\AsmResolver.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protections\AntiTamper\Remover.cs" />
+    <Compile Include="Protections\Base.cs" />
+    <Compile Include="Protections\CleanUp\AntiDnspyClean.cs" />
+    <Compile Include="Protections\CleanUp\Cctor.cs" />
+    <Compile Include="Protections\CleanUp\IntegrityCleaner.cs" />
+    <Compile Include="Protections\CleanUp\RemoveMethods.cs" />
+    <Compile Include="Protections\CodeFlow\CflowCleaner.cs" />
+    <Compile Include="Protections\CodeFlow\CflowCleanersHelpers\OneTwoCleaner.cs" />
+    <Compile Include="Protections\CodeFlow\CflowCleaning\ControlFlowRemover.cs" />
+    <Compile Include="Protections\CodeFlow\CflowCleaning\De4Dot.cs" />
+    <Compile Include="Protections\CodeFlow\CflowCleaning\Utils.cs" />
+    <Compile Include="Protections\CodeFlow\CflowCleaning\Varmelting.cs" />
+    <Compile Include="Protections\CodeFlow\CodeFlowBase.cs" />
+    <Compile Include="Protections\CodeFlow\FieldFixers\FieldsInCtor.cs" />
+    <Compile Include="Protections\CodeFlow\FieldFixers\FieldsInFirstCall.cs" />
+    <Compile Include="Protections\CodeFlow\FieldFixers\NativeMethodCleaner.cs" />
+    <Compile Include="Protections\CodeFlow\VM\Class0.cs" />
+    <Compile Include="Protections\CodeFlow\VM\CleanCflowVM.cs" />
+    <Compile Include="Protections\Helper.cs" />
+    <Compile Include="Protections\Mutations\Basic\AndFixer.cs" />
+    <Compile Include="Protections\Mutations\Basic\DateTimes.cs" />
+    <Compile Include="Protections\Mutations\Basic\DecimalCompare.cs" />
+    <Compile Include="Protections\Mutations\Basic\EmptyTypeCleaner.cs" />
+    <Compile Include="Protections\Mutations\Basic\MathCleaner.cs" />
+    <Compile Include="Protections\Mutations\Basic\NativeIntCasting.cs" />
+    <Compile Include="Protections\Mutations\Basic\SizeOfCleaner.cs" />
+    <Compile Include="Protections\Mutations\Basic\StringToDouble.cs" />
+    <Compile Include="Protections\Mutations\Branches\IFInliner.cs" />
+    <Compile Include="Protections\Mutations\De4Dot\De4DotCleaner.cs" />
+    <Compile Include="Protections\Mutations\Fields\FieldsAssignedAtStart.cs" />
+    <Compile Include="Protections\Mutations\Fields\NativeIntDecryption.cs" />
+    <Compile Include="Protections\Mutations\Locals\NullLocals.cs" />
+    <Compile Include="Protections\Mutations\MutationsBase.cs" />
+    <Compile Include="Protections\Mutations\MutationsCleaner.cs" />
+    <Compile Include="Protections\Mutations\Opaques\Public\PatternOpaqueCleaner.cs" />
+    <Compile Include="Protections\Native Unpacker\Unpack.cs" />
+    <Compile Include="Protections\ProxyCalls\Basic\StandardHiding.cs" />
+    <Compile Include="Protections\ProxyCalls\Calli\Remover.cs" />
+    <Compile Include="Protections\ProxyCalls\Delegates\Remover.cs" />
+    <Compile Include="Protections\ProxyCalls\ProxyBase.cs" />
+    <Compile Include="Protections\ProxyCalls\ProxyCleaner.cs" />
+    <Compile Include="Protections\Strings\DecryptStrings\DecryptStrings.cs" />
+    <Compile Include="Protections\Strings\Initalise\DecryptInitialByteArray.cs" />
+    <Compile Include="Protections\Strings\Initalise\FieldValueGrabber.cs" />
+    <Compile Include="Protections\Strings\Initalise\GetOriginalBytes.cs" />
+    <Compile Include="Protections\Strings\Initalise\LZMA.cs" />
+    <Compile Include="Protections\Strings\StringBase.cs" />
+    <Compile Include="Protections\Strings\StringCleaner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cawk-Emulator\.NET-Instruction-Emulator-master\CawkEmulatorV4\CawkEmulatorV4.csproj">
+      <Project>{377D5E82-8619-4DB9-AEB8-D3B608484644}</Project>
+      <Name>CawkEmulatorV4</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\de4dot.blocks\de4dot.blocks.csproj">
+      <Project>{045b96f2-af80-4c4c-8d27-e38635ac705e}</Project>
+      <Name>de4dot.blocks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dnlib\dnlib-master\src\dnlib.csproj">
+      <Project>{fdfc1237-143f-4919-8318-4926901f4639}</Project>
+      <Name>dnlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\unicorn-net\src\Unicorn.Net\Unicorn.Net.csproj">
+      <Project>{47cfb65f-5def-4e45-8e75-c760d050fcef}</Project>
+      <Name>Unicorn.Net</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Protections\Mutations\Opaques\Private\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
