@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{377D5E82-8619-4DB9-AEB8-D3B608484644}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CawkEmulatorV4</RootNamespace>
+    <AssemblyName>CawkEmulatorV4</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SharpDisasm, Version=1.1.5.0, Culture=neutral, PublicKeyToken=71afd155bcebae3e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Workspace\Secured\SharpDisasm-1.1.5\Bin\Net35\SharpDisasm.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Emulation.cs" />
+    <Compile Include="EventArgs.cs" />
+    <Compile Include="Instructions\Arithmatic\Add.cs" />
+    <Compile Include="Instructions\Arithmatic\And.cs" />
+    <Compile Include="Instructions\Arithmatic\Div.cs" />
+    <Compile Include="Instructions\Arithmatic\Mul.cs" />
+    <Compile Include="Instructions\Arithmatic\Not.cs" />
+    <Compile Include="Instructions\Arithmatic\Or.cs" />
+    <Compile Include="Instructions\Arithmatic\Rem.cs" />
+    <Compile Include="Instructions\Arithmatic\Shl.cs" />
+    <Compile Include="Instructions\Arithmatic\Shr.cs" />
+    <Compile Include="Instructions\Arithmatic\Sub.cs" />
+    <Compile Include="Instructions\Arithmatic\Xor.cs" />
+    <Compile Include="Instructions\Arrays\LdelemI1.cs" />
+    <Compile Include="Instructions\Arrays\LdelemI4.cs" />
+    <Compile Include="Instructions\Arrays\LdelemRef.cs" />
+    <Compile Include="Instructions\Arrays\StelemI1.cs" />
+    <Compile Include="Instructions\Arrays\Stelem_I4.cs" />
+    <Compile Include="Instructions\Arrays\Stelem_Ref.cs" />
+    <Compile Include="Instructions\Branches\Beq.cs" />
+    <Compile Include="Instructions\Branches\Bge.cs" />
+    <Compile Include="Instructions\Branches\Bgt.cs" />
+    <Compile Include="Instructions\Branches\Ble.cs" />
+    <Compile Include="Instructions\Branches\Blt.cs" />
+    <Compile Include="Instructions\Branches\Bne.cs" />
+    <Compile Include="Instructions\Branches\Br.cs" />
+    <Compile Include="Instructions\Branches\BrFalse.cs" />
+    <Compile Include="Instructions\Branches\BrTrue.cs" />
+    <Compile Include="Instructions\Branches\Ceq.cs" />
+    <Compile Include="Instructions\Branches\Cgt.cs" />
+    <Compile Include="Instructions\Branches\Clt.cs" />
+    <Compile Include="Instructions\Branches\LEave.cs" />
+    <Compile Include="Instructions\Branches\Switch.cs" />
+    <Compile Include="Instructions\Constants\LdcI4.cs" />
+    <Compile Include="Instructions\Conv\ConvI.cs" />
+    <Compile Include="Instructions\Conv\ConvI1.cs" />
+    <Compile Include="Instructions\Conv\ConvI2.cs" />
+    <Compile Include="Instructions\Conv\ConvI4.cs" />
+    <Compile Include="Instructions\Conv\ConvI8.cs" />
+    <Compile Include="Instructions\Fields\Ldsfld.cs" />
+    <Compile Include="Instructions\Fields\Stsfld.cs" />
+    <Compile Include="Instructions\Locals\Ldloc.cs" />
+    <Compile Include="Instructions\Locals\Stloc.cs" />
+    <Compile Include="Instructions\Misc\Box.cs" />
+    <Compile Include="Instructions\Misc\Call.cs" />
+    <Compile Include="Instructions\Misc\CallVirt.cs" />
+    <Compile Include="Instructions\Misc\CastClass.cs" />
+    <Compile Include="Instructions\Misc\IsInst.cs" />
+    <Compile Include="Instructions\Misc\Ldelema.cs" />
+    <Compile Include="Instructions\Misc\Ldlen.cs" />
+    <Compile Include="Instructions\Misc\Ldobj.cs" />
+    <Compile Include="Instructions\Misc\Ldtoken.cs" />
+    <Compile Include="Instructions\Misc\Localloc.cs" />
+    <Compile Include="Instructions\Misc\NewArr.cs" />
+    <Compile Include="Instructions\Misc\Stobj.cs" />
+    <Compile Include="Instructions\Native\MethodDefExt2.cs" />
+    <Compile Include="Instructions\Native\MiscExt.cs" />
+    <Compile Include="Instructions\Native\X86ADD.cs" />
+    <Compile Include="Instructions\Native\X86DIV.cs" />
+    <Compile Include="Instructions\Native\X86IMUL.cs" />
+    <Compile Include="Instructions\Native\X86Instruction.cs" />
+    <Compile Include="Instructions\Native\X86Method.cs" />
+    <Compile Include="Instructions\Native\X86MethodToILConverter.cs" />
+    <Compile Include="Instructions\Native\X86MOV.cs" />
+    <Compile Include="Instructions\Native\X86NEG.cs" />
+    <Compile Include="Instructions\Native\X86NOT.cs" />
+    <Compile Include="Instructions\Native\X86POP.cs" />
+    <Compile Include="Instructions\Native\X86SUB.cs" />
+    <Compile Include="Instructions\Native\X86XOR.cs" />
+    <Compile Include="Instructions\Parameters\Ldarg.cs" />
+    <Compile Include="Instructions\Parameters\Starg.cs" />
+    <Compile Include="Instructions\Pointer\LdindI1.cs" />
+    <Compile Include="Instructions\Pointer\LdindI2.cs" />
+    <Compile Include="Instructions\Pointer\LdindI4.cs" />
+    <Compile Include="Instructions\Pointer\StindI1.cs" />
+    <Compile Include="Instructions\Pointer\StindI4.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueStack.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\dnlib\dnlib-master\src\dnlib.csproj">
+      <Project>{fdfc1237-143f-4919-8318-4926901f4639}</Project>
+      <Name>dnlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
