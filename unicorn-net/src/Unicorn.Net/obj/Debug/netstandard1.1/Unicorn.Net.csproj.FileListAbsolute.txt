@@ -1,0 +1,9 @@
+C:\Users\owner\source\repos\NetGuard Deobfuscator 2\unicorn-net\src\Unicorn.Net\bin\Debug\netstandard1.1\Unicorn.Net.deps.json
+C:\Users\owner\source\repos\NetGuard Deobfuscator 2\unicorn-net\src\Unicorn.Net\bin\Debug\netstandard1.1\Unicorn.Net.dll
+C:\Users\owner\source\repos\NetGuard Deobfuscator 2\unicorn-net\src\Unicorn.Net\bin\Debug\netstandard1.1\Unicorn.Net.pdb
+C:\Users\owner\source\repos\NetGuard Deobfuscator 2\unicorn-net\src\Unicorn.Net\obj\Debug\netstandard1.1\Unicorn.Net.csprojAssemblyReference.cache
+C:\Users\owner\source\repos\NetGuard Deobfuscator 2\unicorn-net\src\Unicorn.Net\obj\Debug\netstandard1.1\Unicorn.Net.csproj.CoreCompileInputs.cache
+C:\Users\owner\source\repos\NetGuard Deobfuscator 2\unicorn-net\src\Unicorn.Net\obj\Debug\netstandard1.1\Unicorn.Net.AssemblyInfoInputs.cache
+C:\Users\owner\source\repos\NetGuard Deobfuscator 2\unicorn-net\src\Unicorn.Net\obj\Debug\netstandard1.1\Unicorn.Net.AssemblyInfo.cs
+C:\Users\owner\source\repos\NetGuard Deobfuscator 2\unicorn-net\src\Unicorn.Net\obj\Debug\netstandard1.1\Unicorn.Net.dll
+C:\Users\owner\source\repos\NetGuard Deobfuscator 2\unicorn-net\src\Unicorn.Net\obj\Debug\netstandard1.1\Unicorn.Net.pdb
