@@ -2,11 +2,11 @@
 Public NetGuard Deobfuscator
 made by Cawk
 
-https://www.rtn-team.cc/board/
+# https://www.rtn-team.cc/board/
 
 this is cawk's netguard unpacker thats now public. Enjoy it while it lasts he wont be pushing anymore updates unless the community keep this alive and requires some small help here and there
 
-Credits :
+# Credits :
 0xd4d - DNLib - De4Dot
 
 Washi - AsmRes
